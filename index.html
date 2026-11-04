@@ -6,12 +6,13 @@
   <meta name="description" content="Portafolio y contacto personal de trinomitrico. Proyectos interactivos, lógica y creaciones en Scratch.">
   <title>trinomitrico | Portafolio & Contacto</title>
   
-  <!-- Tipografía moderna sans-serif (Inter) -->
+  <!-- Tipografía moderna sans-serif (Inter) y Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="styles.css">
+  <!-- Enlace a tu hoja de estilos (style.css) -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -20,14 +21,14 @@
     <div class="container header-container">
       <div class="brand-wrapper">
         <a href="#inicio" class="brand-logo-link" aria-label="Ir al inicio">
-          <!-- Carga del logo con fallback inteligente en cascada -->
+          <!-- Carga del logo con fallback inteligente -->
           <img id="site-logo" 
                src="./download/mitm.png" 
                alt="Logo de trinomitrico" 
                class="site-logo" 
                onerror="handleLogoError(this)">
           
-          <!-- Fallback tipográfico elegante en caso de que la imagen aún no exista -->
+          <!-- Fallback tipográfico si aún no has subido la imagen del logo -->
           <div id="logo-text-fallback" class="logo-fallback hidden">
             <span class="logo-symbol">▲</span>
             <span class="logo-brand-name">trinomitrico</span>
@@ -88,7 +89,7 @@
             <div class="scratch-badge">PERFIL OFICIAL</div>
             <h2 class="scratch-username">@trinomitrico</h2>
             <p class="scratch-description">
-              Desarrollador y creador en la plataforma oficial del MIT Scratch. Proyectos de autos, países y un proyecto de ajedrez para un colegio.
+              Desarrollador y creador en la plataforma oficial del MIT Scratch. Proyectos de física, motores 2D, experimentos visuales con lápiz y simuladores.
             </p>
           </div>
           <div class="scratch-card-actions">
@@ -116,7 +117,7 @@
       </div>
     </section>
 
-    <!-- 2. Sección de Proyectos / Scratch Showcase -->
+    <!-- 2. Sección de Proyectos / Scratch Showcase (2 Tarjetas) -->
     <section class="projects-section" id="scratch-showcase">
       <div class="container">
         
@@ -124,22 +125,21 @@
           <div class="section-badge">PORTAFOLIO INTERACTIVO</div>
           <h2 class="section-title">Scratch Showcase & Proyectos</h2>
           <p class="section-subtitle">
-            Selección de creaciones y prototipos desarrollados bajo la cuenta <span class="highlight-mono">@trinomitrico</span>. Haz clic en cualquiera para abrirlo o probarlo.
+            Selección principal de proyectos desarrollados bajo la cuenta <span class="highlight-mono">@trinomitrico</span>. Haz clic en cualquiera para abrirlo o probarlo.
           </p>
         </div>
 
-        <!-- Filtros rápidos para proyectos -->
+        <!-- Filtros rápidos para las 2 categorías -->
         <div class="projects-filter-bar">
           <button class="filter-chip active" data-filter="all">Todos</button>
           <button class="filter-chip" data-filter="fisicas">Físicas & Motores</button>
-          <button class="filter-chip" data-filter="graficos">Estados de Estados Unidos</button>
           <button class="filter-chip" data-filter="juegos">Videojuegos</button>
         </div>
 
-        <!-- Rejilla de tarjetas minimalistas -->
+        <!-- Rejilla con las 2 tarjetas -->
         <div class="projects-grid">
 
-          <!-- Tarjeta 1 -->
+          <!-- Tarjeta 1: Físicas & Gravedad -->
           <article class="project-card" data-category="fisicas">
             <div class="card-visual">
               <div class="card-canvas-placeholder">
@@ -152,10 +152,10 @@
               <span class="card-chip">Físicas</span>
             </div>
             <div class="card-body">
-              <div class="card-meta">Scratch 3.0 • Lógica Cuántica</div>
-              <h3 class="card-title">Sistema interactivo 2D</h3>
+              <div class="card-meta">Scratch 3.0 • Lógica & Vectores</div>
+              <h3 class="card-title">Motor de Colisiones & Gravedad 2D</h3>
               <p class="card-description">
-                Sistema interactivo y gracioso para reconocer los estados de Estados Unidos.
+                Simulador de inercia, rebotes elásticos y cálculo vectorial de fuerzas sin librerías externas, implementado puramente mediante bloques de control y variables personalizadas en Scratch.
               </p>
               <div class="card-footer">
                 <a href="https://scratch.mit.edu/users/trinomitrico/" target="_blank" rel="noopener noreferrer" class="card-link">
@@ -169,7 +169,7 @@
             </div>
           </article>
 
-          <!-- Tarjeta 2 -->
+          <!-- Tarjeta 2: Videojuego Plataformas -->
           <article class="project-card" data-category="juegos">
             <div class="card-visual">
               <div class="card-canvas-placeholder">
@@ -183,9 +183,9 @@
             </div>
             <div class="card-body">
               <div class="card-meta">Scratch 3.0 • Motor de Plataformas</div>
-              <h3 class="card-title">Ajedrez y damas</h3>
+              <h3 class="card-title">Neon Precision Platformer</h3>
               <p class="card-description">
-                 
+                Plataformas de alta precisión con salto adaptable por tiempo de pulsación, wall-slide, aceleración no lineal y renderizado sin lag a 60 FPS proyectados.
               </p>
               <div class="card-footer">
                 <a href="https://scratch.mit.edu/users/trinomitrico/" target="_blank" rel="noopener noreferrer" class="card-link">
@@ -198,35 +198,8 @@
               </div>
             </div>
           </article>
-          <!-- Tarjeta 3 -->
-          <article class="project-card" data-category="juegos">
-            <div class="card-visual">
-              <div class="card-canvas-placeholder">
-                <div class="visual-grid-bg"></div>
-                <div class="visual-icon-box">
-                  <span class="mono-symbol">▤</span>
-                  <span class="visual-label">RPG_ENGINE.SB3</span>
-                </div>
-              </div>
-              <span class="card-chip">Videojuegos</span>
-            </div>
-            <div class="card-body">
-              <div class="card-meta">Scratch 3.0 • Top-Down Engine</div>
-              <h3 class="card-title">RPG Minimalista: The Grid</h3>
-              <p class="card-description">
-                Sistema modular para aventuras RPG con motor de diálogo dinámico con efecto máquina de escribir, inventario en arrays de listas y sistema de guardado por código cifrado.
-              </p>
-              <div class="card-footer">
-                <a href="https://scratch.mit.edu/users/trinomitrico/" target="_blank" rel="noopener noreferrer" class="card-link">
-                  <span>Ver en Scratch</span>
-                  <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 13L13 3M13 3H6M13 3V10"/></svg>
-                </a>
-                <button class="card-action-btn" onclick="openProjectModal('RPG Minimalista: The Grid', 'trinomitrico', 'Mapeo por casillas, colisiones en tiempo real e interacción con NPCs.')">
-                  Detalles
-                </button>
-              </div>
-            </div>
-          </article>
+
+        </div>
 
         <!-- Banner de Scratch -->
         <div class="scratch-hub-banner">
@@ -470,6 +443,7 @@
     </div>
   </footer>
 
+  <!-- Script interactivo -->
   <script src="script.js"></script>
 </body>
 </html>
