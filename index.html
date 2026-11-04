@@ -22,11 +22,12 @@
       <div class="brand-wrapper">
         <a href="#inicio" class="brand-logo-link" aria-label="Ir al inicio">
           <!-- Carga del logo con fallback inteligente -->
-          <img id="site-logo" 
-               src="./download/mitm.png" 
-               alt="Logo de trinomitrico" 
-               class="site-logo" 
-               onerror="handleLogoError(this)">
+      <!-- Por esto: -->
+<img id="site-logo" 
+     src="mitm.png" 
+     alt="Logo de trinomitrico" 
+     class="site-logo" 
+     onerror="handleLogoError(this)">
           
           <!-- Fallback tipográfico si aún no has subido la imagen del logo -->
           <div id="logo-text-fallback" class="logo-fallback hidden">
