@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portafolio y contacto personal de trinomitrico. Proyectos interactivos, lógica y creaciones en Scratch.">
+  <title>trinomitrico | Portafolio & Contacto</title>
+  
+  <!-- Tipografía moderna sans-serif (Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Barra de Navegación / Header -->
+  <header class="site-header">
+    <div class="container header-container">
+      <div class="brand-wrapper">
+        <a href="#inicio" class="brand-logo-link" aria-label="Ir al inicio">
+          <!-- Carga del logo con fallback inteligente en cascada -->
+          <img id="site-logo" 
+               src="./download/mitm.png" 
+               alt="Logo de trinomitrico" 
+               class="site-logo" 
+               onerror="handleLogoError(this)">
+          
+          <!-- Fallback tipográfico elegante en caso de que la imagen aún no exista -->
+          <div id="logo-text-fallback" class="logo-fallback hidden">
+            <span class="logo-symbol">▲</span>
+            <span class="logo-brand-name">trinomitrico</span>
+          </div>
+        </a>
+      </div>
+
+      <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+        <ul class="nav-list">
+          <li><a href="#inicio" class="nav-link">Inicio</a></li>
+          <li><a href="#scratch-showcase" class="nav-link">Proyectos</a></li>
+          <li><a href="#sobre-mi" class="nav-link">Sobre Mí</a></li>
+          <li><a href="#contacto" class="nav-link">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="https://scratch.mit.edu/users/trinomitrico/" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="btn btn-outline-sm scratch-btn"
+           title="Visitar perfil oficial en Scratch">
+          <svg class="icon-scratch" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+          <span>Scratch: trinomitrico</span>
+        </a>
+        <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. Hero Section -->
+    <section class="hero-section" id="inicio">
+      <div class="container hero-container">
+        
+        <div class="hero-tag-wrapper">
+          <span class="status-indicator"></span>
+          <span class="hero-tag">DISPONIBLE PARA PROYECTOS & COLABORACIONES</span>
+        </div>
+
+        <h1 class="hero-title">
+          Lógica, creatividad y desarrollo interactivo.
+        </h1>
+
+        <p class="hero-subtitle">
+          Bienvenido a mi espacio personal de contacto y desarrollo. Exploro la algoritmia, el diseño de mecánicas de juego y la programación visual interactiva a través del ecosistema de Scratch y tecnologías web.
+        </p>
+
+        <!-- Bloque destacado de la cuenta de Scratch -->
+        <div class="scratch-feature-card">
+          <div class="scratch-card-info">
+            <div class="scratch-badge">PERFIL OFICIAL</div>
+            <h2 class="scratch-username">@trinomitrico</h2>
+            <p class="scratch-description">
+              Desarrollador y creador en la plataforma oficial del MIT Scratch. Proyectos de física, motores 2D, experimentos visuales con lápiz y simuladores.
+            </p>
+          </div>
+          <div class="scratch-card-actions">
+            <a href="https://scratch.mit.edu/users/trinomitrico/" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="btn btn-primary btn-large">
+              <span>Explorar en Scratch</span>
+              <svg viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M4 16L16 4M16 4H7M16 4V13"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-quick-cta">
+          <a href="#contacto" class="btn btn-secondary">
+            Iniciar Conversación / Contacto
+          </a>
+          <a href="#scratch-showcase" class="btn btn-text">
+            Ver Proyectos Destacados ↓
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 2. Sección de Proyectos / Scratch Showcase -->
+    <section class="projects-section" id="scratch-showcase">
+      <div class="container">
+        
+        <div class="section-header">
+          <div class="section-badge">PORTAFOLIO INTERACTIVO</div>
+          <h2 class="section-title">Scratch Showcase & Proyectos</h2>
+          <p class="section-subtitle">
+            Selección de creaciones y prototipos desarrollados bajo la cuenta <span class="highlight-mono">@trinomitrico</span>. Haz clic en cualquiera para abrirlo o probarlo.
+          </p>
+        </div>
+
+        <!-- Filtros rápidos para proyectos -->
+        <div class="projects-filter-bar">
+          <button class="filter-chip active" data-filter="all">Todos</button>
+          <button class="filter-chip" data-filter="fisicas">Físicas & Motores</button>
+          <button class="filter-chip" data-filter="graficos">Lápiz & Gráficos</button>
+          <button class="filter-chip" data-filter="juegos">Videojuegos</button>
+        </div>
+
+        <!-- Rejilla de tarjetas minimalistas -->
+        <div class="projects-grid">
+
+          <!-- Tarjeta 1 -->
+          <article class="project-card" data-category="fisicas">
+            <div class="card-visual">
+              <div class="card-canvas-placeholder">
+                <div class="visual-grid-bg"></div>
+                <div class="visual-icon-box">
+                  <span class="mono-symbol">◈</span>
+                  <span class="visual-label">GRAVITY_V2.SB3</span>
+                </div>
+              </div>
+              <span class="card-chip">Físicas</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">Scratch 3.0 • Lógica Cuántica</div>
+              <h3 class="card-title">Motor de Colisiones & Gravedad 2D</h3>
+              <p class="card-description">
+                Simulador de inercia, rebotes elásticos y cálculo vectorial de fuerzas sin librerías externas, implementado puramente mediante bloques de control y variables personalizadas.
+              </p>
+              <div class="card-footer">
+                <a href="https://scratch.mit.edu/users/trinomitrico/" target="_blank" rel="noopener noreferrer" class="card-link">
+                  <span>Ver en Scratch</span>
+                  <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 13L13 3M13 3H6M13 3V10"/></svg>
+                </a>
+                <button class="card-action-btn" onclick="openProjectModal('Motor de Colisiones & Gravedad 2D', 'trinomitrico', 'Sistema de vectores, masa y aceleración gravitatoria.')">
+                  Detalles
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tarjeta 2 -->
+          <article class="project-card" data-category="juegos">
+            <div class="card-visual">
+              <div class="card-canvas-placeholder">
+                <div class="visual-grid-bg"></div>
+                <div class="visual-icon-box">
+                  <span class="mono-symbol">▶</span>
+                  <span class="visual-label">RUNNER_60FPS.SB3</span>
+                </div>
+              </div>
+              <span class="card-chip">Videojuegos</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">Scratch 3.0 • Motor de Plataformas</div>
+              <h3 class="card-title">Neon Precision Platformer</h3>
+              <p class="card-description">
+                Plataformas de alta precisión con salto adaptable por tiempo de pulsación, wall-slide, aceleración no lineal y renderizado sin lag a 60 FPS proyectados.
+              </p>
+              <div class="card-footer">
+                <a href="https://scratch.mit.edu/users/trinomitrico/" target="_blank" rel="noopener noreferrer" class="card-link">
+                  <span>Ver en Scratch</span>
+                  <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 13L13 3M13 3H6M13 3V10"/></svg>
+                </a>
+                <button class="card-action-btn" onclick="openProjectModal('Neon Precision Platformer', 'trinomitrico', 'Diseño de niveles procedurales con checkpoints instantáneos.')">
+                  Detalles
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tarjeta 3 -->
+          <article class="project-card" data-category="graficos">
+            <div class="card-visual">
+              <div class="card-canvas-placeholder">
+                <div class="visual-grid-bg"></div>
+                <div class="visual-icon-box">
+                  <span class="mono-symbol">✦</span>
+                  <span class="visual-label">PEN_RENDER_3D.SB3</span>
+                </div>
+              </div>
+              <span class="card-chip">Lápiz & Gráficos</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">Scratch 3.0 • Extensión Pen</div>
+              <h3 class="card-title">Renderizador 3D Wireframe Vectorial</h3>
+              <p class="card-description">
+                Proyección de modelos tridimensionales (cubo, pirámide y esfera de alambre) calculando matrices de rotación trigonométrica en tiempo real con trazado de líneas.
+              </p>
+              <div class="card-footer">
+                <a href="https://scratch.mit.edu/users/trinomitrico/" target="_blank" rel="noopener noreferrer" class="card-link">
+                  <span>Ver en Scratch</span>
+                  <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 13L13 3M13 3H6M13 3V10"/></svg>
+                </a>
+                <button class="card-action-btn" onclick="openProjectModal('Renderizador 3D Wireframe Vectorial', 'trinomitrico', 'Rotación en los tres ejes (X, Y, Z) con control de cámara e interpolación.')">
+                  Detalles
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tarjeta 4 -->
+          <article class="project-card" data-category="fisicas">
+            <div class="card-visual">
+              <div class="card-canvas-placeholder">
+                <div class="visual-grid-bg"></div>
+                <div class="visual-icon-box">
+                  <span class="mono-symbol">◎</span>
+                  <span class="visual-label">PATHFINDER_A_STAR.SB3</span>
+                </div>
+              </div>
+              <span class="card-chip">Físicas</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">Scratch 3.0 • Algoritmia & IA</div>
+              <h3 class="card-title">Algoritmo A* & Búsqueda de Rutas</h3>
+              <p class="card-description">
+                Implementación interactiva del algoritmo A* (A-Star) en una cuadrícula personalizable donde los usuarios pueden colocar muros y ver cómo el agente encuentra la ruta óptima.
+              </p>
+              <div class="card-footer">
+                <a href="https://scratch.mit.edu/users/trinomitrico/" target="_blank" rel="noopener noreferrer" class="card-link">
+                  <span>Ver en Scratch</span>
+                  <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 13L13 3M13 3H6M13 3V10"/></svg>
+                </a>
+                <button class="card-action-btn" onclick="openProjectModal('Algoritmo A* & Búsqueda de Rutas', 'trinomitrico', 'Visualización paso a paso de conjuntos abiertos y cerrados de nodos.')">
+                  Detalles
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tarjeta 5 -->
+          <article class="project-card" data-category="juegos">
+            <div class="card-visual">
+              <div class="card-canvas-placeholder">
+                <div class="visual-grid-bg"></div>
+                <div class="visual-icon-box">
+                  <span class="mono-symbol">▤</span>
+                  <span class="visual-label">RPG_ENGINE.SB3</span>
+                </div>
+              </div>
+              <span class="card-chip">Videojuegos</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">Scratch 3.0 • Top-Down Engine</div>
+              <h3 class="card-title">RPG Minimalista: The Grid</h3>
+              <p class="card-description">
+                Sistema modular para aventuras RPG con motor de diálogo dinámico con efecto máquina de escribir, inventario en arrays de listas y sistema de guardado por código cifrado.
+              </p>
+              <div class="card-footer">
+                <a href="https://scratch.mit.edu/users/trinomitrico/" target="_blank" rel="noopener noreferrer" class="card-link">
+                  <span>Ver en Scratch</span>
+                  <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 13L13 3M13 3H6M13 3V10"/></svg>
+                </a>
+                <button class="card-action-btn" onclick="openProjectModal('RPG Minimalista: The Grid', 'trinomitrico', 'Mapeo por casillas, colisiones en tiempo real e interacción con NPCs.')">
+                  Detalles
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tarjeta 6 -->
+          <article class="project-card" data-category="graficos">
+            <div class="card-visual">
+              <div class="card-canvas-placeholder">
+                <div class="visual-grid-bg"></div>
+                <div class="visual-icon-box">
+                  <span class="mono-symbol">≋</span>
+                  <span class="visual-label">SYNTH_AUDIO_LAB.SB3</span>
+                </div>
+              </div>
+              <span class="card-chip">Lápiz & Gráficos</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">Scratch 3.0 • Música & Audio</div>
+              <h3 class="card-title">Sintetizador Rítmico & Osciloscopio</h3>
+              <p class="card-description">
+                Laboratorio interactivo de ondas sonoras que combina notas sintetizadas en bucle con una gráfica osciloscópica reactiva dibujada en vivo mediante el lápiz de Scratch.
+              </p>
+              <div class="card-footer">
+                <a href="https://scratch.mit.edu/users/trinomitrico/" target="_blank" rel="noopener noreferrer" class="card-link">
+                  <span>Ver en Scratch</span>
+                  <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 13L13 3M13 3H6M13 3V10"/></svg>
+                </a>
+                <button class="card-action-btn" onclick="openProjectModal('Sintetizador Rítmico & Osciloscopio', 'trinomitrico', 'Control BPM, cambio de escalas y modulación interactiva.')">
+                  Detalles
+                </button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Banner de Scratch -->
+        <div class="scratch-hub-banner">
+          <div class="hub-text">
+            <h3>¿Quieres probar todos los proyectos directamente en Scratch?</h3>
+            <p>Accede a mi biblioteca completa, remezcla mis creaciones e inspecciona el código bloque por bloque en mi perfil oficial.</p>
+          </div>
+          <a href="https://scratch.mit.edu/users/trinomitrico/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            Ir a scratch.mit.edu/users/trinomitrico/
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 3. Sección Sobre Mí / Filosofía de Trabajo -->
+    <section class="about-section" id="sobre-mi">
+      <div class="container">
+        <div class="about-grid">
+          
+          <div class="about-header-block">
+            <div class="section-badge">FILOSOFÍA</div>
+            <h2 class="section-title">El poder de la programación visual y el código limpio.</h2>
+            <p class="about-lead">
+              Desarrollar proyectos en Scratch no es solo unir bloques: es comprender la arquitectura del software desde sus fundamentos puros: ciclos, estados, eventos concurrentes y optimización.
+            </p>
+          </div>
+
+          <div class="about-metrics-block">
+            <div class="metric-card">
+              <span class="metric-number">100%</span>
+              <span class="metric-label">Lógica Propia & Algorítmica</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-number">Scratch</span>
+              <span class="metric-label">Especialización en @trinomitrico</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-number">Open</span>
+              <span class="metric-label">Creaciones listas para remezclar</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Sección de Contacto -->
+    <section class="contact-section" id="contacto">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <div class="section-badge">CONVERSEMOS</div>
+          <h2 class="section-title">Contacto Directo</h2>
+          <p class="section-subtitle">
+            ¿Tienes alguna consulta, propuesta de colaboración, idea para un proyecto o feedback sobre mis creaciones en Scratch? Escríbeme a través de este formulario o mediante mis canales oficiales.
+          </p>
+        </div>
+
+        <div class="contact-layout">
+          
+          <!-- Formulario Minimalista Blanco y Negro -->
+          <div class="contact-form-container">
+            <form id="contact-form" class="minimal-form" novalidate>
+              
+              <div class="form-group">
+                <label for="contact-name" class="form-label">Tu Nombre <span class="required">*</span></label>
+                <input type="text" 
+                       id="contact-name" 
+                       name="name" 
+                       class="form-input" 
+                       placeholder="Ej. Alex Mendoza" 
+                       required>
+                <span class="form-error" id="name-error">Por favor, ingresa tu nombre.</span>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-email" class="form-label">Correo Electrónico <span class="required">*</span></label>
+                <input type="email" 
+                       id="contact-email" 
+                       name="email" 
+                       class="form-input" 
+                       placeholder="correo@ejemplo.com" 
+                       required>
+                <span class="form-error" id="email-error">Por favor, ingresa un correo válido.</span>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-subject" class="form-label">Asunto</label>
+                <input type="text" 
+                       id="contact-subject" 
+                       name="subject" 
+                       class="form-input" 
+                       placeholder="Colaboración, consulta sobre Scratch, proyecto...">
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message" class="form-label">Mensaje <span class="required">*</span></label>
+                <textarea id="contact-message" 
+                          name="message" 
+                          class="form-textarea" 
+                          rows="5" 
+                          placeholder="Cuéntame sobre tu idea, propuesta o proyecto..." 
+                          required></textarea>
+                <span class="form-error" id="message-error">Por favor, ingresa tu mensaje (mínimo 10 caracteres).</span>
+              </div>
+
+              <button type="submit" id="submit-btn" class="btn btn-submit">
+                <span class="btn-text">Enviar Mensaje</span>
+                <span class="btn-icon">→</span>
+              </button>
+
+              <div id="form-feedback" class="form-feedback hidden" role="alert"></div>
+
+            </form>
+          </div>
+
+          <!-- Canales alternativos de contacto y redes -->
+          <div class="contact-info-container">
+            
+            <div class="info-card">
+              <h3 class="info-card-title">Canal Principal</h3>
+              <p class="info-card-desc">
+                La forma más activa de comunicarte y ver actualizaciones de proyectos en vivo es a través de mi perfil de Scratch.
+              </p>
+              <a href="https://scratch.mit.edu/users/trinomitrico/" 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 class="info-channel-link">
+                <div class="channel-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                  </svg>
+                </div>
+                <div class="channel-content">
+                  <span class="channel-name">Scratch Oficial</span>
+                  <span class="channel-detail">scratch.mit.edu/users/trinomitrico/</span>
+                </div>
+                <span class="channel-arrow">↗</span>
+              </a>
+            </div>
+
+            <div class="info-card">
+              <h3 class="info-card-title">Correo Electrónico</h3>
+              <p class="info-card-desc">
+                Si prefieres correspondencia directa o formal:
+              </p>
+              <div class="copy-email-box">
+                <input type="text" readonly value="trinomitrico.contacto@gmail.com" id="email-address-text" class="email-input-display">
+                <button type="button" class="btn-copy" id="copy-email-btn" title="Copiar correo al portapapeles">
+                  <span id="copy-btn-text">Copiar</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <h3 class="info-card-title">Presencia Digital & Enlaces</h3>
+              <ul class="social-links-list">
+                <li>
+                  <a href="https://scratch.mit.edu/users/trinomitrico/" target="_blank" rel="noopener noreferrer" class="social-link-item">
+                    <span class="social-name">Scratch</span>
+                    <span class="social-handle">@trinomitrico</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-link-item">
+                    <span class="social-name">GitHub</span>
+                    <span class="social-handle">@trinomitrico</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-link-item">
+                    <span class="social-name">X / Twitter</span>
+                    <span class="social-handle">@trinomitrico</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://discord.com" target="_blank" rel="noopener noreferrer" class="social-link-item">
+                    <span class="social-name">Discord</span>
+                    <span class="social-handle">Comunidad Scratch</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="response-pledge">
+              <span class="pledge-dot"></span>
+              <span>Respuestas periódicas garantizadas para consultas y soporte de proyectos.</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal para visualización rápida de proyecto -->
+  <div id="project-modal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-box">
+      <button class="modal-close-btn" id="modal-close" aria-label="Cerrar ventana emergente">✕</button>
+      <div class="modal-header">
+        <span class="modal-badge">SCRATCH PROJECT INFO</span>
+        <h3 id="modal-title" class="modal-title">Nombre del Proyecto</h3>
+      </div>
+      <div class="modal-content">
+        <p id="modal-description" class="modal-desc">Descripción del proyecto</p>
+        <div class="modal-instructions">
+          <h4>¿Cómo integrar el proyecto en vivo?</h4>
+          <p>Para incrustar este proyecto en tu sitio o probarlo localmente, puedes usar el reproductor embebido oficial de Scratch:</p>
+          <pre class="code-block"><code>&lt;iframe src="https://scratch.mit.edu/projects/{ID}/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen&gt;&lt;/iframe&gt;</code></pre>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a id="modal-scratch-link" href="https://scratch.mit.edu/users/trinomitrico/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          Ver en Perfil de Scratch
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pie de Página / Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <p class="footer-brand">trinomitrico</p>
+        <p class="footer-meta">Diseño minimalista monocromático. Código limpio para Scratch y Web.</p>
+      </div>
+      <div class="footer-right">
+        <a href="#inicio" class="back-to-top" aria-label="Volver al inicio">
+          <span>Subir al inicio</span>
+          <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M8 13V3M3 8l5-5 5 5"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="container footer-sub">
+      <p>© 2026 trinomitrico. Todos los derechos reservados. Desarrollado con HTML5, CSS3 y JavaScript puro.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
